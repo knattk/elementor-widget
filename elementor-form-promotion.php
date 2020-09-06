@@ -1,0 +1,43 @@
+<?php
+/**
+* Plugin Name: Elementor- Promotion List
+* Plugin URI: https://khwaan.com
+* Description: Promotion list
+* Version: 1.0
+* Author: Nattakan C.
+* Author URI: https://khwaan.com
+**/
+
+namespace ELNTW;
+
+// use Elementor\Plugin;
+class Widget_Loader{
+
+  private static $_instance = null;
+
+  public static function instance(){
+    if (is_null(self::$_instance)) {
+      self::$_instance = new self();
+    }
+    return self::$_instance;
+  }
+
+  private function include_widgets_files(){
+    require_once(__DIR__ . '\form-promotion.php');
+  }
+
+  public function register_widgets(){
+
+    $this->include_widgets_files();
+
+    \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\FormPromotion());
+
+  }
+
+  public function __construct(){
+    add_action('elementor/widgets/widgets_registered', [$this, 'register_widgets'], 99);
+  }
+}
+
+// Instantiate Plugin Class
+Widget_Loader::instance();
