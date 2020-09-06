@@ -3,14 +3,14 @@
 * Plugin Name: Elementor- Promotion List
 * Plugin URI: https://khwaan.com
 * Description: Promotion list
-* Version: 1.0
+* Version: 0.1
 * Author: Nattakan C.
 * Author URI: https://khwaan.com
 **/
 
-namespace ELNTW;
+namespace ELMTW;
 
-// use Elementor\Plugin;
+// use Elementor Plugin;
 class Widget_Loader{
 
   private static $_instance = null;
@@ -23,7 +23,7 @@ class Widget_Loader{
   }
 
   private function include_widgets_files(){
-    require_once(__DIR__ . '\form-promotion.php');
+    require_once(__DIR__ . '\promotion-list.php');
   }
 
   public function register_widgets(){
@@ -39,5 +39,10 @@ class Widget_Loader{
   }
 }
 
+
+
+
 // Instantiate Plugin Class
 Widget_Loader::instance();
+
+
