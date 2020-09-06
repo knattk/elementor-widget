@@ -1,12 +1,11 @@
 <?php
 
-namespace ELNTW\Widgets;
+namespace ELMTW\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 
 class FormPromotion extends Widget_Base{
 
@@ -102,6 +101,14 @@ class FormPromotion extends Widget_Base{
           <?php echo $settings['promotion4'] ?>
         </div>
       </div>
+
+     
+    <?php echo"<script language='javascript'>
+
+         
+          </script>";
+    ?>
+
     <?php
   }
 
